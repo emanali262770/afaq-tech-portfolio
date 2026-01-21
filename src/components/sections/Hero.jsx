@@ -22,8 +22,9 @@ export default function Hero() {
                 <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
                   Your <span className="text-primary">Afaq Technologies</span> With
                   Full
-                  <br />
+                 
                   Cycle{" "}
+                   <br />
                   <span className="text-primary">Software Development</span>
                 </h1>
 

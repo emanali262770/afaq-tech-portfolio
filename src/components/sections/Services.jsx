@@ -88,6 +88,8 @@ export default function Services() {
                   shadow-[0_10px_30px_rgba(0,0,0,0.04)]
                   transition-all duration-300
                   hover:-translate-y-1
+                  hover:bg-blue-50 
+                  cursor-pointer
                   hover:shadow-[0_18px_45px_rgba(0,0,0,0.08)]
                 "
                             >

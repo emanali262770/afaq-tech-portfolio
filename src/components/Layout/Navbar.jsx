@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -24,28 +25,30 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="bg-white/70 backdrop-blur-md border-b border-border">
+      <div className="lg:bg-white/70 backdrop-blur-md border-b border-border">
         <div className="w-full px-6 lg:px-28">
           <div className="h-16 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-10 w-14 rounded-xl border border-border bg-white grid place-items-center">
-                <span className="text-primary font-black text-lg">Afaq</span>
-              </div>
-              <div className="leading-tight">
-                <div className="font-semibold tracking-wide">Technologies</div>
-                <div className="text-xs text-[var(--text-muted)] -mt-1">
-                  Agency
-                </div>
+            <Link href="/" className="flex items-center gap-3">
+              <div className="h-14 w-20  flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Afaq Technologies Logo"
+                  width={72}     // ⬅️ increased
+                  height={52}    // ⬅️ increased
+                  className="object-contain"
+                  priority
+                />
               </div>
             </Link>
 
+
             {/* Center Links (Desktop only) */}
             <nav className="hidden md:flex items-center gap-10">
-              <NavLink href="#services">Services</NavLink>
-              <NavLink href="#case-studies">Case Studies</NavLink>
-              <NavLink href="#careers">Careers</NavLink>
-              <NavLink href="#about">About Us</NavLink>
+              <Link className=" hover:text-primary  duration-200" href="#services">Services</Link>
+              <Link className=" hover:text-primary  duration-200" href="#case-studies">Case Studies</Link>
+              <Link className=" hover:text-primary  duration-200" href="#careers">Careers</Link>
+              <Link className=" hover:text-primary  duration-200" href="#about">About Us</Link>
             </nav>
 
             {/* Right side (Desktop CTA + Mobile button) */}
@@ -70,19 +73,16 @@ export default function Navbar() {
                 <span className="sr-only">Open menu</span>
                 <div className="grid gap-1.5">
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
-                      open ? "translate-y-2 rotate-45" : ""
-                    }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "translate-y-2 rotate-45" : ""
+                      }`}
                   />
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
-                      open ? "opacity-0" : ""
-                    }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "opacity-0" : ""
+                      }`}
                   />
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
-                      open ? "-translate-y-2 -rotate-45" : ""
-                    }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "-translate-y-2 -rotate-45" : ""
+                      }`}
                   />
                 </div>
               </button>
@@ -91,24 +91,23 @@ export default function Navbar() {
 
           {/* Mobile Dropdown */}
           <div
-            className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
-              open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+              }`}
           >
             <div className="pb-4 pt-2">
               <div className="flex flex-col gap-3 rounded-2xl border border-border bg-white/80 p-4">
-                <NavLink href="#services" onClick={() => setOpen(false)}>
+                <Link href="#services" onClick={() => setOpen(false)}>
                   Services
-                </NavLink>
-                <NavLink href="#case-studies" onClick={() => setOpen(false)}>
+                </Link>
+                <Link href="#case-studies" onClick={() => setOpen(false)}>
                   Case Studies
-                </NavLink>
-                <NavLink href="#careers" onClick={() => setOpen(false)}>
+                </Link>
+                <Link href="#careers" onClick={() => setOpen(false)}>
                   Careers
-                </NavLink>
-                <NavLink href="#about" onClick={() => setOpen(false)}>
+                </Link>
+                <Link href="#about" onClick={() => setOpen(false)}>
                   About Us
-                </NavLink>
+                </Link>
 
                 <Link
                   href="#consultation"
