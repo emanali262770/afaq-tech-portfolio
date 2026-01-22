@@ -19,16 +19,13 @@ export default function Footer() {
       className="relative w-full bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/footer.png')" }}
     >
-      {/* white overlay (same like screenshot) */}
-     
-
-      <div className="relative mx-auto  px-28 py-14">
+      <div className="relative mx-auto px-6 md:px-28 py-14">
         {/* TOP AREA */}
-        <div className="relative ">
+        <div className="relative">
           {/* Left Logo */}
           <div className="absolute left-0 top-0 hidden md:block">
             <Image
-              src="/images/logo.png" // <-- set your footer logo name here
+              src="/images/logo.png"
               alt="Afaq"
               width={90}
               height={90}
@@ -37,7 +34,7 @@ export default function Footer() {
           </div>
 
           {/* Center Brand */}
-          <div className="text-center ">
+          <div className="text-left md:text-center">
             <h3 className="text-4xl font-extrabold tracking-tight text-black">
               Afaq <span className="text-primary">Technologies</span>
             </h3>
@@ -58,18 +55,16 @@ export default function Footer() {
                   Services
                 </Link>
               </li>
-              
               <li>
-                <Link href="#" className="hover:text-black transition">
+                <Link href="/case-studies" className="hover:text-black transition">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-black transition">
+                <Link href="/about-us" className="hover:text-black transition">
                   About Us
                 </Link>
               </li>
-             
             </ul>
           </div>
 
@@ -77,9 +72,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-black">Services</h4>
             <ul className="mt-6 space-y-3 text-sm text-black/80">
-              <li>AI Intelligence & Automation</li>
-              <li>AI/ML Engineering</li>
-              <li>Custom Product Development</li>
+              <li>Web Development</li>
+              <li>Mobile Development</li>
+              <li>Desktop Application</li>
+               <li>Digital Marketing</li>
             </ul>
           </div>
 
@@ -105,7 +101,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-black">Company</h4>
             <ul className="mt-6 space-y-3 text-sm text-black/80">
               <li>
-                <Link href="#" className="hover:text-black transition">
+                <Link href="/about-us" className="hover:text-black transition">
                   About Us
                 </Link>
               </li>
@@ -114,34 +110,29 @@ export default function Footer() {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-black transition">
-                  Blogs
-                </Link>
-              </li>
+             
             </ul>
           </div>
 
-          {/* Right Contact + Icons */}
-          <div className="md:text-right">
+          {/* Contact + Social */}
+          <div className="text-left md:text-right">
             <div className="flex justify-start md:justify-end gap-3">
-             <Facebook className="text-primary"/>
-              <Instagram className="text-primary"/>
-             <Linkedin className="text-primary"/>
-
+              <Facebook className="text-primary" />
+              <Instagram className="text-primary" />
+              <Linkedin className="text-primary" />
               <Twitter className="text-primary" />
             </div>
 
             <div className="mt-6 space-y-3 text-sm text-black/80">
               <p>43 L Block, Johar Town, Lahore, 54600</p>
-              <p>info@xpertprime.com</p>
+              <p>info@afaqtechnologies.com</p>
               <p>042 37870548</p>
             </div>
           </div>
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-14 text-sm text-black/70">
+        <div className="mt-14 text-sm text-black/70 text-left md:text-center">
           <span className="mr-2">⚖</span>
           Copyright © 2026{" "}
           <span className="text-primary font-medium">Afaq Technologies</span>. All

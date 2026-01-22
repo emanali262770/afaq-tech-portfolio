@@ -12,48 +12,35 @@ import {
 
 const services = [
     {
-        icon: Brain,
-        title1: "AI INTELLIGENCE",
-        title2: "& AUTOMATION",
-        desc:
-            "Automating workflows with AI & ML solutions that cut costs, boost speed with smarter efficiency.",
-    },
-    {
-        icon: Cpu,
-        title1: "AI/ML",
-        title2: "ENGINEERING",
-        desc:
-            "Building custom machine learning solutions & AI/ML development services that turn data into decisions.",
-    },
-    {
-        icon: Code,
-        title1: "CUSTOM SOFTWARE",
+        icon: Globe,
+        title1: "WEB",
         title2: "DEVELOPMENT",
         desc:
-            "Custom software development services for scalable & secure platforms customized to your goals.",
-    },
-    {
-        icon: Package,
-        title1: "CUSTOM PRODUCT",
-        title2: "DEVELOPMENT",
-        desc:
-            "From MVPs to scale-ready products, product development services that bring your vision to life.",
+            "Custom web development services delivering fast, scalable, and conversion-focused websites tailored to your business goals.",
     },
     {
         icon: Smartphone,
         title1: "MOBILE APP",
         title2: "DEVELOPMENT",
         desc:
-            "End-to-end custom app development services with cross-platform apps that engage just for you.",
+            "End-to-end mobile app development for iOS and Android, building secure, high-performance, and user-friendly applications.",
     },
     {
-        icon: Globe,
-        title1: "WEB",
-        title2: "DEVELOPMENT",
+        icon: Package,
+        title1: "DIGITAL",
+        title2: "MARKETING",
         desc:
-            "Custom website development services that deliver speed, conversions & a brand-first experience.",
+            "Data-driven digital marketing solutions including SEO, paid ads, and social media strategies to grow visibility and revenue.",
+    },
+    {
+        icon: Code,
+        title1: "DESKTOP",
+        title2: "APPLICATIONS",
+        desc:
+            "Custom desktop application development for Windows and macOS with reliable performance, security, and scalability.",
     },
 ];
+
 
 export default function Services() {
     return (

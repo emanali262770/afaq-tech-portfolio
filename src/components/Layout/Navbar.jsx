@@ -46,9 +46,9 @@ export default function Navbar() {
             {/* Center Links (Desktop only) */}
             <nav className="hidden md:flex items-center gap-10">
               <Link className=" hover:text-primary  duration-200" href="/services">Services</Link>
-              <Link className=" hover:text-primary  duration-200" href="#case-studies">Case Studies</Link>
-              <Link className=" hover:text-primary  duration-200" href="#careers">Careers</Link>
-              <Link className=" hover:text-primary  duration-200" href="#about">About Us</Link>
+              <Link className=" hover:text-primary  duration-200" href="/case-studies">Case Studies</Link>
+              
+              <Link className=" hover:text-primary  duration-200" href="/about-us">About Us</Link>
             </nav>
 
             {/* Right side (Desktop CTA + Mobile button) */}
@@ -96,16 +96,14 @@ export default function Navbar() {
           >
             <div className="pb-4 pt-2">
               <div className="flex flex-col gap-3 rounded-2xl border border-border bg-white/80 p-4">
-                <Link href="#services" onClick={() => setOpen(false)}>
+                <Link href="/services" onClick={() => setOpen(false)}>
                   Services
                 </Link>
-                <Link href="#case-studies" onClick={() => setOpen(false)}>
+                <Link href="/case-studies" onClick={() => setOpen(false)}>
                   Case Studies
                 </Link>
-                <Link href="#careers" onClick={() => setOpen(false)}>
-                  Careers
-                </Link>
-                <Link href="#about" onClick={() => setOpen(false)}>
+              
+                <Link href="/about-us" onClick={() => setOpen(false)}>
                   About Us
                 </Link>
 

@@ -12,72 +12,42 @@ import {
   Megaphone,
   BarChart3,
 } from "lucide-react";
-
 const services = [
   {
-    icon: Brain,
-    title1: "AI INTELLIGENCE",
-    title2: "& AUTOMATION",
-    desc:
-      "Automating workflows with AI & ML solutions that cut costs, boost speed with smarter efficiency.",
-  },
-  {
-    icon: Cpu,
-    title1: "AI/ML",
-    title2: "ENGINEERING",
-    desc:
-      "Building custom machine learning solutions & AI/ML development services that turn data into decisions.",
-  },
-  {
-    icon: Code,
-    title1: "CUSTOM SOFTWARE",
-    title2: "DEVELOPMENT",
-    desc:
-      "Custom software development services for scalable & secure platforms customized to your goals.",
-  },
-  {
-    icon: Package,
-    title1: "CUSTOM PRODUCT",
-    title2: "DEVELOPMENT",
-    desc:
-      "From MVPs to scale-ready products, product development services that bring your vision to life.",
-  },
-  {
-    icon: Smartphone,
-    title1: "MOBILE APP",
-    title2: "DEVELOPMENT",
-    desc:
-      "End-to-end custom app development services with cross-platform apps that engage just for you.",
-  },
-  {
+    slug: "web-development",
     icon: Globe,
     title1: "WEB",
     title2: "DEVELOPMENT",
     desc:
-      "Custom website development services that deliver speed, conversions & a brand-first experience.",
+      "Custom web development services delivering fast, scalable, and conversion-focused websites tailored to your business goals.",
   },
   {
-    icon: Users,
-    title1: "STAFF",
-    title2: "AUGMENTATION",
+    slug: "mobile-app-development",
+    icon: Smartphone,
+    title1: "MOBILE APP",
+    title2: "DEVELOPMENT",
     desc:
-      "IT staff augmentation services give you skilled experts on demand, scaling teams without overhead costs.",
+      "End-to-end mobile app development for iOS and Android, building secure, high-performance, and user-friendly applications.",
   },
   {
-    icon: Megaphone,
+    slug: "digital-marketing",
+    icon: Package,
     title1: "DIGITAL",
     title2: "MARKETING",
     desc:
-      "Custom brand and digital marketing services that drive visibility, clicks, & measurable revenue growth.",
+      "Data-driven digital marketing solutions including SEO, paid ads, and social media strategies to grow visibility and revenue.",
   },
   {
-    icon: BarChart3,
-    title1: "ANALYTICS & STRATEGY",
-    title2: "ADVISORY",
+    slug: "desktop-applications",
+    icon: Code,
+    title1: "DESKTOP",
+    title2: "APPLICATIONS",
     desc:
-      "IT advisory services that turn raw data into strategies, boosting performance & ROI.",
+      "Custom desktop application development for Windows and macOS with reliable performance, security, and scalability.",
   },
 ];
+
+
 
 export default function SevicesCardSection() {
   return (
@@ -135,7 +105,7 @@ export default function SevicesCardSection() {
 
                 {/* Learn more (same underline animation) */}
                 <Link
-                  href="#"
+                  href={`/services/${s.slug}`}
                   className="
                     relative mt-8 inline-block text-sm font-medium text-foreground
                     transition-colors duration-300 hover:text-primary
@@ -153,7 +123,7 @@ export default function SevicesCardSection() {
           })}
         </div>
 
-      
+
       </div>
     </section>
   );
