@@ -30,12 +30,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="lg:bg-white/70 backdrop-blur-md border-b border-border">
+     <div className="lg:bg-white/40 backdrop-blur-xl border-b border-white/40">
+
         <div className="w-full px-6 lg:px-28">
           <div className="h-16 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-14 w-20 flex items-center justify-center overflow-hidden">
+              <div className="h-14 w-14 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/logo.png"
                   alt="Afaq Technologies Logo"

@@ -25,7 +25,7 @@ body {
 
 @theme {
   /* Tailwind utilities you use directly */
-  --color-primary: #2f6bff;              /* text-primary, bg-primary */
+  --color-primary: #f29d29;              /* text-primary, bg-primary */
   --color-primary-foreground: #ffffff;   /* text-primary-foreground */
 
   --color-foreground: #0b1220;           /* text-foreground */

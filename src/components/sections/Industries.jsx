@@ -3,14 +3,14 @@
 import Image from "next/image";
 
 const items = [
-  { title: "Ecommerce", icon: "/icons/ecom.svg" },
-  { title: "Real Estate", icon: "/icons/estate.svg" },
-  { title: "Hospitality & tourism", icon: "/icons/hos.svg" },
+  { title: "Ecommerce", icon: "/icons/ecom.png" },
+  { title: "Real Estate", icon: "/icons/estate.png" },
+  { title: "Hospitality & tourism", icon: "/icons/hos.png" },
  
-  { title: "Education & E-learning", icon: "/icons/edu.svg" },
-  { title: "Finance & FinTech", icon: "/icons/fin.svg" },
-  { title: "Healthcare", icon: "/icons/health.svg" },
-  { title: "Startups & Scaleups", icon: "/icons/incre.svg" },
+  { title: "Education & E-learning", icon: "/icons/edu.png" },
+  { title: "Finance & FinTech", icon: "/icons/fin.png" },
+  { title: "Healthcare", icon: "/icons/hea.png" },
+  { title: "Startups & Scaleups", icon: "/icons/start.png" },
 ];
 
 export default function Industries() {
