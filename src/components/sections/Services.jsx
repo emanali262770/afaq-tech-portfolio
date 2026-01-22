@@ -121,7 +121,7 @@ export default function Services() {
                 {/* ===== Bottom CTA ===== */}
                 <div className="mt-14 flex justify-center">
                     <Link
-                        href="#"
+                        href="/services"
                         className="
               inline-flex items-center gap-2
               rounded-xl
