@@ -70,7 +70,7 @@ export default function CaseStudyDetailSection({ data }) {
                                 {/* CTA */}
                                 <div className="mt-10">
                                     <Link
-                                        href={data.ctaHref || "#launch"}
+                                        href={data.ctaHref || "/contact-us"}
                                         className="
                       inline-flex items-center gap-2
                       rounded-full

@@ -39,7 +39,7 @@ export default function AfaqEdge() {
 
             <div className="mt-8">
               <Link
-                href="#"
+                href="/services"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
                            bg-primary text-primary-foreground hover:opacity-90 transition"
               >
@@ -65,14 +65,7 @@ export default function AfaqEdge() {
                   Scale faster with a dedicated development team that works like your own, fully aligned to your goals.
                 </p>
 
-                <Link
-                  href="#"
-                  className="mt-4 inline-block text-sm font-semibold text-primary
-                             relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
-                             after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Explore Teams <span aria-hidden="true">→</span>
-                </Link>
+              
               </div>
 
               {/* Dedicated Resource */}
@@ -91,14 +84,7 @@ export default function AfaqEdge() {
                   Hire dedicated software engineers who work exclusively on your tasks, flexible, focused, and cost-smart.
                 </p>
 
-                <Link
-                  href="#"
-                  className="mt-4 inline-block text-sm font-semibold text-primary
-                             relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0
-                             after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Explore Resources <span aria-hidden="true">→</span>
-                </Link>
+              
               </div>
             </div>
           </div>

@@ -35,11 +35,11 @@ export default function Hero() {
 
                 <div className="mt-8 flex items-center gap-4">
                   <Link
-                    href="#launch"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold
                              bg-primary text-primary-foreground hover:opacity-90 transition"
                   >
-                    Launch big Today <span aria-hidden="true">›</span>
+                    Contact Us <span aria-hidden="true">›</span>
                   </Link>
 
                  

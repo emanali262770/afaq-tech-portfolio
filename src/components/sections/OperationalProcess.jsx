@@ -49,7 +49,7 @@ export default function OperationalProcess() {
 
             <div className="mt-10">
               <Link
-                href="#services"
+                href="/services"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary transition"
               >
                 View Services <span aria-hidden="true">›</span>

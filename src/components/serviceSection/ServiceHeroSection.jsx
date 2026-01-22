@@ -20,9 +20,9 @@ export default function ServiceHeroSection() {
                 <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
                   <span className="text-foreground">Afaq </span>
                   <span className="text-primary">Technologies</span>{" "}
-                  <span className="text-foreground">For</span>
+              
                   <br />
-                  <span className="text-primary">Power Growth</span>
+                 <span className="text-foreground">Services</span>
                 </h1>
 
                 <p className="mt-5 text-base md:text-lg text-[var(--text-muted)] leading-relaxed">
@@ -32,7 +32,7 @@ export default function ServiceHeroSection() {
 
                 <div className="mt-8 flex items-center justify-center gap-4">
                   <Link
-                    href="#launch"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-semibold
                              bg-primary text-primary-foreground hover:opacity-90 transition"
                   >

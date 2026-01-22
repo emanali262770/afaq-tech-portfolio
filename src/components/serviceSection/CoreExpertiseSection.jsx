@@ -245,7 +245,7 @@ export default function CoreExpertiseSection({ slug = "digital-marketing" }) {
             {/* CTA */}
             <div className="mt-10">
               <Link
-                href="#contact"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white hover:bg-black duration-200 transition"
               >
                 {content.cta} <span aria-hidden="true">›</span>

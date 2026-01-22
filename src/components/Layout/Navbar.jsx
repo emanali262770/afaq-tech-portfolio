@@ -1,27 +1,32 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-const NavLink = ({ href, children, onClick }) => (
-  <Link
-    href={href}
-    onClick={onClick}
-    className="text-sm font-medium text-[var(--text-muted)] hover:text-foreground transition"
-  >
-    {children}
-  </Link>
-);
+import { useEffect, useState, useMemo } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
-  // optional: close menu on ESC
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  // ✅ active checks (sub routes bhi cover)
+  const isHome = pathname === "/";
+  const isServices = pathname === "/services" || pathname.startsWith("/services/");
+  const isCaseStudies =
+    pathname === "/case-studies" || pathname.startsWith("/case-studies/");
+  const isAbout = pathname === "/about-us" || pathname.startsWith("/about-us/");
+
+  const linkClass = (active) =>
+    `px-4 py-2 rounded-full text-sm font-medium transition ${
+      active
+        ? "bg-primary text-primary-foreground"
+        : "text-[var(--text-muted)] hover:text-primary"
+    }`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -30,32 +35,41 @@ export default function Navbar() {
           <div className="h-16 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-14 w-20  flex items-center justify-center overflow-hidden">
+              <div className="h-14 w-20 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/logo.png"
                   alt="Afaq Technologies Logo"
-                  width={72}     // ⬅️ increased
-                  height={52}    // ⬅️ increased
+                  width={72}
+                  height={52}
                   className="object-contain"
                   priority
                 />
               </div>
             </Link>
 
+            {/* Desktop Links */}
+            <nav className="hidden md:flex items-center gap-3">
+              <Link href="/" className={linkClass(isHome)}>
+                Home
+              </Link>
 
-            {/* Center Links (Desktop only) */}
-            <nav className="hidden md:flex items-center gap-10">
-              <Link className=" hover:text-primary  duration-200" href="/services">Services</Link>
-              <Link className=" hover:text-primary  duration-200" href="/case-studies">Case Studies</Link>
-              
-              <Link className=" hover:text-primary  duration-200" href="/about-us">About Us</Link>
+              <Link href="/services" className={linkClass(isServices)}>
+                Services
+              </Link>
+
+              <Link href="/case-studies" className={linkClass(isCaseStudies)}>
+                Case Studies
+              </Link>
+
+              <Link href="/about-us" className={linkClass(isAbout)}>
+                About Us
+              </Link>
             </nav>
 
-            {/* Right side (Desktop CTA + Mobile button) */}
+            {/* Right side */}
             <div className="flex items-center gap-2">
-              {/* Desktop CTA */}
               <Link
-                href="#consultation"
+                href="/contact-us"
                 className="hidden md:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold
                            bg-primary text-primary-foreground hover:opacity-90 transition"
               >
@@ -70,19 +84,21 @@ export default function Navbar() {
                 onClick={() => setOpen((v) => !v)}
                 className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-white/80 hover:bg-white transition"
               >
-                <span className="sr-only">Open menu</span>
                 <div className="grid gap-1.5">
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "translate-y-2 rotate-45" : ""
-                      }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
+                      open ? "translate-y-2 rotate-45" : ""
+                    }`}
                   />
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "opacity-0" : ""
-                      }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
+                      open ? "opacity-0" : ""
+                    }`}
                   />
                   <span
-                    className={`h-0.5 w-5 bg-[var(--text)] transition ${open ? "-translate-y-2 -rotate-45" : ""
-                      }`}
+                    className={`h-0.5 w-5 bg-[var(--text)] transition ${
+                      open ? "-translate-y-2 -rotate-45" : ""
+                    }`}
                   />
                 </div>
               </button>
@@ -91,24 +107,38 @@ export default function Navbar() {
 
           {/* Mobile Dropdown */}
           <div
-            className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-              }`}
+            className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ${
+              open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
           >
             <div className="pb-4 pt-2">
               <div className="flex flex-col gap-3 rounded-2xl border border-border bg-white/80 p-4">
-                <Link href="/services" onClick={() => setOpen(false)}>
+                <Link
+                  href="/services"
+                  onClick={() => setOpen(false)}
+                  className={linkClass(isServices)}
+                >
                   Services
                 </Link>
-                <Link href="/case-studies" onClick={() => setOpen(false)}>
+
+                <Link
+                  href="/case-studies"
+                  onClick={() => setOpen(false)}
+                  className={linkClass(isCaseStudies)}
+                >
                   Case Studies
                 </Link>
-              
-                <Link href="/about-us" onClick={() => setOpen(false)}>
+
+                <Link
+                  href="/about-us"
+                  onClick={() => setOpen(false)}
+                  className={linkClass(isAbout)}
+                >
                   About Us
                 </Link>
 
                 <Link
-                  href="#consultation"
+                  href="/contact-us"
                   onClick={() => setOpen(false)}
                   className="mt-2 inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold
                              bg-primary text-primary-foreground hover:opacity-90 transition"
