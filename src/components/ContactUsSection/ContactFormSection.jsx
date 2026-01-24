@@ -38,7 +38,7 @@ export default function ContactFormSection() {
   setStatus({ loading: true, success: "", error: "" });
 
   try {
-    const res = await fetch("http://localhost:5000/api/contact", {
+    const res = await fetch( `${process.env.NEXT_PUBLIC_API_URL}/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
