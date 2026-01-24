@@ -31,29 +31,46 @@ export default function ContactFormSection() {
     setForm((p) => ({ ...p, [name]: value }));
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
+ const onSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      const res = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+  // ✅ start loading
+  setStatus({ loading: true, success: "", error: "" });
+
+  try {
+    const res = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      setStatus({
+        loading: false,
+        success: "",
+        error: data.msg || "Something went wrong",
       });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setStatus({ loading: false, success: "", error: data.msg || "Something went wrong" });
-        return;
-      }
-
-      setStatus({ loading: false, success: data.msg || "Message sent successfully!", error: "" });
-      setForm({ interest: "", name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      alert("Server error");
+      return;
     }
-  };
+
+    setStatus({
+      loading: false,
+      success: data.msg || "Message sent successfully!",
+      error: "",
+    });
+
+    setForm({ interest: "", name: "", email: "", phone: "", message: "" });
+  } catch (err) {
+    setStatus({
+      loading: false,
+      success: "",
+      error: "Server error. Please try again.",
+    });
+  }
+};
+
 
   return (
     <section className="relative py-16 sm:py-20">

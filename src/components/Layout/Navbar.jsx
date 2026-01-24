@@ -36,13 +36,13 @@ export default function Navbar() {
           <div className="h-16 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="h-14 w-14 flex items-center justify-center overflow-hidden">
+              <div className="h-12 w-12 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/images/logo.png"
                   alt="Afaq Technologies Logo"
                   width={72}
                   height={52}
-                  className="object-contain"
+                  className="object-cover"
                   priority
                 />
               </div>

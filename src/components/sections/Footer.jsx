@@ -84,15 +84,11 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-black">Legal</h4>
             <ul className="mt-6 space-y-3 text-sm text-black/80">
               <li>
-                <Link href="#" className="hover:text-black transition">
+                <Link href="/privacy-policy" className="hover:text-black transition">
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-black transition">
-                  Terms of Use
-                </Link>
-              </li>
+             
             </ul>
           </div>
 
