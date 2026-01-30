@@ -8,30 +8,34 @@ import {
   Package,
   Smartphone,
   Globe,
- 
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const services = [
   {
     icon: Globe,
+    slug: "web-development",
     title1: "WEB",
     title2: "DEVELOPMENT",
     desc: "Custom website development services that deliver speed, conversions & a brand-first experience.",
   },
   {
     icon: Smartphone,
+    slug: "mobile-app-development",
     title1: "MOBILE APP",
     title2: "DEVELOPMENT",
     desc: "End-to-end custom app development services with cross-platform apps that engage just for you.",
   },
   {
     icon: Package,
+    slug: "digital-marketing",
     title1: "DIGITAL",
     title2: "MARKETING",
     desc: "Data-driven digital marketing solutions including SEO, paid ads, and social media strategies to grow visibility and revenue.",
   },
   {
     icon: Code,
+    slug: "desktop-applications",
     title1: "DESKTOP",
     title2: "APPLICATIONS",
     desc: "Custom desktop application development for Windows and macOS with reliable performance, security, and scalability.",
@@ -39,6 +43,8 @@ const services = [
 ];
 
 export default function Services() {
+  const router = useRouter();
+
   return (
     <section id="services" className="bg-background">
       <div className="mx-auto max-w-[98rem] px-4 sm:px-6 lg:px-8 py-20">
@@ -58,9 +64,11 @@ export default function Services() {
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((s) => {
             const Icon = s.icon;
+
             return (
               <div
-                key={s.title1 + s.title2}
+                key={s.slug}
+                onClick={() => router.push(`/services/${s.slug}`)}
                 className="
                   group relative overflow-hidden
                   rounded-[24px]
@@ -97,18 +105,19 @@ export default function Services() {
                   {s.desc}
                 </p>
 
-                {/* Learn more */}
+                {/* Learn more (optional – works too) */}
                 <Link
-                  href="/services"
+                  href={`/services/${s.slug}`}
+                  onClick={(e) => e.stopPropagation()}
                   className="
-    relative z-10 mt-8 inline-block text-sm font-semibold text-foreground
-    transition-all duration-300 group-hover:text-[#f29d29]
-    after:absolute after:left-0 after:-bottom-1
-    after:h-[2px] after:w-0
-    after:bg-[#f29d29]
-    after:transition-all after:duration-300
-    group-hover:after:w-full
-  "
+                    relative z-10 mt-8 inline-block text-sm font-semibold text-foreground
+                    transition-all duration-300 group-hover:text-[#f29d29]
+                    after:absolute after:left-0 after:-bottom-1
+                    after:h-[2px] after:w-0
+                    after:bg-[#f29d29]
+                    after:transition-all after:duration-300
+                    group-hover:after:w-full
+                  "
                 >
                   Learn more →
                 </Link>
